@@ -1,0 +1,44 @@
+div.dummy 
+    div.clearfix
+      div.pull-left
+        form.form-horizontal(ng-submit="addTodo()")
+          div.input-append.form-wid
+            input.input-wid(id="appendedInputButton",ng-model="todoText",placeholder="add new todo here",type="text")
+            button.btn.btn-inverse#input-left(type="submit",value="add")
+              i.icon-plus.icon-white(style="margin-left:5px")
+
+      div.pull-right
+        span.label.label-info {{(todos | filter:{done: false}).length}} New
+        span.label.label-inverse {{(todos | filter:{done: true}).length}} Done
+    ul.unstyled(doneUpdate="todos",ng:model="todos")
+      li(class="done-{{todo.done}}", ng-repeat="todo in todos | filter:{done: false}")
+        div(ng-controller="EditCtrl")
+          pre
+            a.boxy-check(ng-click="todoDone(todo)")
+              i.icon-ok.icon-white
+            span(ng:hide="editEn")
+              span {{todo.content}}
+              div.boxy-edit
+                a(ng-click="enabEdit()")
+                  i.icon-pencil.icon-format.icon-white
+                a(ng-click="removeTodo(todo)")
+                  i.icon-trash.icon-format.icon-white
+                a(ng-click="moveTodo(todo)")
+                  i.icon-move.icon-format.icon-white
+            span(ng:show="editEn")
+              input(type="text",size="30",name="todoName",value="{{todo.content}}",ng:required,ng-model="todoName")
+              div.boxy-edit
+                a(ng-click="saveEdit(todo)")
+                  i.icon-ok.icon-format.icon-white
+                a(ng-click="cancelEdit()")
+                  i.icon-remove.icon-format.icon-white
+    hr
+    ul.unstyled
+      li(class="done-{{todo.done}}", ng-repeat="todo in todos | filter:{done: true}")
+        pre
+          a.boxy-check(ng-click="todoNotDone(todo)")
+            i.icon-ok.icon-white
+          span {{todo.content}}
+          div.boxy-edit
+            a(ng-click="removeTodo(todo)")
+              i.icon-trash.icon-white

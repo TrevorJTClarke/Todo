@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+<meta charset="utf-8">
+<title>Todo.ly</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/todo.css">
+<script src="lib/angular/angular.js"></script>
+<script src="js/todo.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<body>
+    <div class="container-fluid">
+        <div ng-controller="TodoCtrl">
+        <h2>Todo.ly <span class="label label-info">{{todos.length}} New</span></h2>
+          <form class="form-horizontal" ng-submit="addTodo()">
+            <div class="input-append">
+                <input ng-model="todoText" id="appendedInputButton" placeholder="add new todo here" type="text">
+                <button class="btn btn-info" id="input-left" type="submit" value="add"><i class="icon-plus icon-white"></i> Add</button>
+            </div>
+          </form>
+          <ul class="unstyled">
+            <li ng-repeat="todo in todos" class="done-{{todo.done}}">
+              <pre><input type="checkbox" class="icon-format" ng-model="todo.done" /><span>{{todo.text}}</span><a ng-click="removeTodo()"><i class="icon-trash pull-right icon-format"></i></a></pre>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>
