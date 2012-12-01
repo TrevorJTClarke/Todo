@@ -23,17 +23,10 @@ exports.login = function(req, res){
     res.render('partials/login');
 };
 
-// exports.login = function ( req, res, next ){
-//   Todo.find({ user_id : req.cookies.user_id }).
-//     sort( '-updated_at' ).
-//     exec( function ( err, todos, count ){
-//       if( err ) return next( err );
- 
-//       res.send( 'login', {
-//           title : 'Login'
-//       });
-//     });
-// };
+//scotts middlewarz exmmmpple
+// app.all('*', middleWare, function () {
+//   next();
+// });
 
 exports.list = function ( req, res, next ){
   Todo.find({ user_id : req.cookies.user_id }).
