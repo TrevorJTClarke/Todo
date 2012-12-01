@@ -18,8 +18,11 @@ app.configure(function(){
   app.use(express.cookieParser());
   app.use(express.methodOverride());
   app.use(require('connect').bodyParser());
+  app.use();
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.cookieDecoder());
+  app.use(express.session({store: MemStore}));
 });
 
 app.configure( 'development', function (){
