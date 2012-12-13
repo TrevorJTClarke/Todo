@@ -3,7 +3,6 @@ var todoApp = angular.module('todo', ['ngResource']).
     config(function($routeProvider) {
         $routeProvider.
           when('/', {controller:TodoCtrl, templateUrl:'partials/todo'}).
-          when('/login', {controller:LoginCtrl, templateUrl:'partials/login'}).
           when('/todos', {controller:TodoCtrl, templateUrl:'partials/todo'}).
           otherwise({redirectTo:'/login'});
       });

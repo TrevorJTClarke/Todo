@@ -10,22 +10,22 @@ script(src="lib/angular/angular.js",ng:autobind)
 script(src="lib/angular/angular-resource.js")
 script(src="js/todo.js")
 body
-div.dark
-  div.header
-    h2
-      | Todo
-    div.logout
-      i.icon-off.icon-white
-  div.dummy
-  div.login-wrap(ng-model="loginAuth()")
-    form(action="/login",method="post",accept-charset="utf-8")
-      h3 Login
-      div
-        input(type="text",name="username",placeholder="User")
-      div
-        input(type="text",name="password",placeholder="Pass")
-      div
-        input.btn.btn-large(type="submit",name="loginSubmit")
+//- div.dark
+//-   div.header
+//-     h2
+//-       | Todo
+//-     div.logout
+//-       i.icon-off.icon-white
+  //- div.dummy
+  //- div.login-wrap(ng-model="loginAuth()")
+  //-   form(action="/login",method="post",accept-charset="utf-8")
+  //-     h3 Login
+  //-     div
+  //-       input(type="text",name="username",placeholder="User")
+  //-     div
+  //-       input(type="text",name="password",placeholder="Pass")
+  //-     div
+  //-       input.btn.btn-large(type="submit",name="loginSubmit",value="send")
 div.container-fluid
   div(ng-controller="TodoCtrl")
     div.header
@@ -35,7 +35,7 @@ div.container-fluid
         i.icon-off.icon-white
     //-div(ng-view)
     //-login stuff here
-    div.login-wrap
+    //- div.login-wrap
     //-todo stuff here
     div.dummy
     div.clearfix

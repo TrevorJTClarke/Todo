@@ -1,4 +1,28 @@
-h1 Login
-form(action="/login",method="post",accept-charset="utf-8")
-	input(type="text",name="username",placeholder="User")
-	input(type="text",name="password",placeholder="Pass")
+!!! 5
+html(lang="en",ng-app)
+head
+meta(charset="utf-8")
+title Todo
+link(rel="stylesheet",href="css/bootstrap.css")
+link(rel="stylesheet",href="css/todo.css")
+script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+script(src="lib/angular/angular.js",ng:autobind)
+script(src="lib/angular/angular-resource.js")
+script(src="js/todo.js")
+body
+div.dark
+  div.header
+    h2
+      | Todo
+    div.logout
+      i.icon-off.icon-white
+  div.dummy
+  div.login-wrap
+    form(action="/login",method="post",accept-charset="utf-8")
+      h3 Login
+      div
+        input(type="text",name="username",placeholder="Email")
+      div
+        input(type="text",name="password",placeholder="Password")
+      div
+        input.btn.btn-large(type="submit",name="loginSubmit",value="LOGIN")

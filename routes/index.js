@@ -10,7 +10,8 @@ exports.index = function ( req, res, next ){
  
       res.render( 'index', {
           title : 'Todo',
-          todos : todos
+          todos : todos,
+          message: req.flash('info')
       });
     });
 };
@@ -20,7 +21,9 @@ exports.partials = function (req, res) {
 };
 
 exports.login = function(req, res){
-    res.render('partials/login');
+    res.render( 'partials/login', {
+          title : 'Login'
+      });
 };
 
 //scotts middlewarz exmmmpple
